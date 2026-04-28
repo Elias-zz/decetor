@@ -1,4 +1,4 @@
-FROM registry.aliyuncs.com/library/python:3.11-slim
+FROM docker.mirrors.aliyuncs.com/library/python:3.11-slim
 
 WORKDIR /app
 
