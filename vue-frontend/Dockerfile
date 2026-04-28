@@ -1,4 +1,4 @@
-FROM docker.mirrors.aliyuncs.com/library/node:22-alpine AS build-stage
+FROM registry.cn-hangzhou.aliyuncs.com/library/node:22-alpine
 
 WORKDIR /app
 
