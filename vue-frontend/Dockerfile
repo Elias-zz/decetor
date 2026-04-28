@@ -1,4 +1,5 @@
-FROM registry.cn-hangzhou.aliyuncs.com/acs/node:20-alpine as build-stage
+# 只改了这里 ↓↓↓
+FROM node:20-alpine as build-stage
 
 WORKDIR /app
 
@@ -10,7 +11,8 @@ COPY . .
 
 RUN npm run build
 
-FROM registry.cn-hangzhou.aliyuncs.com/acs/nginx:alpine as production-stage
+# 只改了这里 ↓↓↓
+FROM nginx:alpine as production-stage
 
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
