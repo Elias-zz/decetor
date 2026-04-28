@@ -1,0 +1,13 @@
+{
+  "name": "fastapi-backend",
+  "version": "1.0.0",
+  "description": "敏感词检测系统后端",
+  "main": "main.py",
+  "scripts": {
+    "start": "uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+    "install": "pip install -r requirements.txt"
+  },
+  "keywords": ["sensitive", "word", "detection"],
+  "author": "",
+  "license": "MIT"
+}

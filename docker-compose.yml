@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./fastapi-backend
+    container_name: fastapi-backend
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./vue-frontend
+    container_name: vue-frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
